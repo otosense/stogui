@@ -3,7 +3,7 @@ from typing import Callable, Iterable
 import streamlit.components.v1 as components
 import streamlit as st
 
-_DEBUG = True
+_DEBUG = False
 
 
 if _DEBUG:
@@ -79,7 +79,6 @@ if __name__ == '__main__':
     ]
 
     current_steps = pipeline_maker(
-        # key='my_pipeline_maker',
         items=items,
         steps=steps,
         serializer=serializer
