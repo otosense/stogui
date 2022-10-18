@@ -1,12 +1,13 @@
+from distutils.util import strtobool
 import os
 from typing import Callable, Iterable
 import streamlit.components.v1 as components
 import streamlit as st
 
-_DEBUG = False
+DEBUG = strtobool(os.getenv("STOGUI_DEBUG", "false"))
 
 
-if _DEBUG:
+if DEBUG:
     _component_func = components.declare_component(
         "pipeline_maker",
         url="http://localhost:3001",

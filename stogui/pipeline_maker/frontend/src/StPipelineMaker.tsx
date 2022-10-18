@@ -20,7 +20,7 @@ const StPipelineMaker = () => {
     <PipelineMaker
       items={items}
       steps={steps}
-      style={{filter: 'invert(1)', minHeight: "300px"}}
+      style={{minHeight: "300px"}}
       onAddStep={resizeFrame}
       onDeleteStep={resizeFrame}
       onShowItems={resizeFrame}
