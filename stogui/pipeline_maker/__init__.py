@@ -3,7 +3,7 @@ from typing import Callable, Iterable
 import streamlit.components.v1 as components
 import streamlit as st
 
-_DEBUG = False
+_DEBUG = True
 
 
 if _DEBUG:
@@ -39,7 +39,6 @@ def pipeline_maker(
     _steps = [serializable_map[s] for s in steps]
 
     serializable_pipeline = _component_func(items=_items, steps=_steps)
-    print('serializable_pipeline', serializable_pipeline)
     pipeline = [
         [k for k, v in serializable_map.items() if v == sp][0]
         for sp in serializable_pipeline

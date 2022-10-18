@@ -16,12 +16,6 @@ const StPipelineMaker = () => {
     }, 0);
   }
 
-  const handlePipelineChange = (pipeline: any[]) => {
-    if (!pipeline.includes('')) {
-      Streamlit.setComponentValue(pipeline)
-    }
-  }
-
   return(
     <PipelineMaker
       items={items}
@@ -31,7 +25,7 @@ const StPipelineMaker = () => {
       onDeleteStep={resizeFrame}
       onShowItems={resizeFrame}
       onHideItems={resizeFrame}
-      onPipelineChange={handlePipelineChange}
+      onPipelineChange={Streamlit.setComponentValue}
     />
   )
 }
