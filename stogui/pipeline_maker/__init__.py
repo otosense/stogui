@@ -3,7 +3,7 @@ from typing import Callable, Iterable
 import streamlit.components.v1 as components
 import streamlit as st
 
-_DEBUG = True
+_DEBUG = False
 
 
 if _DEBUG:
