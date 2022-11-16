@@ -1,0 +1,4 @@
+stogui
+======
+.. automodule:: stogui
+   :members:
