@@ -35,7 +35,7 @@ jobs:
       - name: Pylint Validation
         run: pylint ./$PROJECT_NAME --ignore=tests,examples,scrap --disable=all --enable=C0114,E0401 | mk_pylint_report
 
-      - name: Test
+      # - name: Test
         # run: pytest --ignore=$PROJECT_NAME/examples --ignore=$PROJECT_NAME/scrap --doctest-modules -v $PROJECT_NAME
 
   publish:
