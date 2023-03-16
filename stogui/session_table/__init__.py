@@ -20,5 +20,4 @@ else:
 def session_table(
     *, list_session: Callable = None,
 ):
-    _component_func(listSessions=list_session)
-    return list_session
+    return _component_func(listSessions=list_session)
