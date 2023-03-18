@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
+import { Streamlit } from "streamlit-component-lib"
 import { useRenderData } from 'streamlit-component-lib-react-hooks'
 import { OtoTable } from '@otosense/ogui';
+import { Session } from '@otosense/ogui/lib/SessionTable/types';
 
 
-const returnEmptyList = () => []
 
-const StSessionTable = () => {
+const StOtoTable = () => {
   const renderData = useRenderData()
-  const listSessions = renderData.args['listSessions'] || returnEmptyList
-
+  const sessions: Session[] = renderData.args['sessions'] || []
+  const query = renderData.args['query'] || null
+  useEffect(() => Streamlit.setFrameHeight(1024));
   return(
     <OtoTable
-      listSessions={listSessions}
+      data={sessions}
+      setComponentValue={Streamlit.setComponentValue}
+      query={query}
     />
   )
 }
 
-export default StSessionTable;
+export default StOtoTable;

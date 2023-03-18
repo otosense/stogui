@@ -17,7 +17,8 @@ else:
     _component_func = components.declare_component('session_table', path=build_dir)
 
 
-def session_table(
-    *, list_session: Callable = None,
+def oto_table(
+    *, sessions=None, query=None
 ):
-    return _component_func(listSessions=list_session)
+    component_value = _component_func(sessions=sessions, query=query)
+    return component_value
