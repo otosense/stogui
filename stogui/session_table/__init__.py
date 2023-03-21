@@ -18,7 +18,7 @@ else:
 
 
 def oto_table(
-    *, sessions=None, query=None
+    *, sessions=None, query=None, is_multiselect=None
 ):
-    component_value = _component_func(sessions=sessions, query=query)
+    component_value = _component_func(sessions=sessions, query=query, is_multiselect=is_multiselect)
     return component_value
