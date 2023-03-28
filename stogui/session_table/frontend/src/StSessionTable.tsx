@@ -12,10 +12,14 @@ const StOtoTable = () => {
   const query = renderData.args['query'] || null
   const isMultiSelect = renderData.args['is_multiselect'] || false
   useEffect(() => Streamlit.setFrameHeight(1024));
+
   return(
     <OtoTable
       data={sessions}
-      onSelectSessions={Streamlit.setComponentValue}
+      onSelectSessions={(v: string[]) => {
+        console.log('OtoTable onSelectSessions', v)
+        Streamlit.setComponentValue(v)
+      }}
       query={query}
       isMultiSelect={isMultiSelect}
     />
