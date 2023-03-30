@@ -20,5 +20,7 @@ else:
 def oto_table(
     *, sessions=None, query=None, is_multiselect=None
 ):
+    if callable(sessions):
+        sessions = sessions()
     component_value = _component_func(sessions=sessions, query=query, is_multiselect=is_multiselect)
     return component_value
