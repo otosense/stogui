@@ -17,10 +17,15 @@ else:
 
 
 def oto_table(
-    *, sessions: Union[List[dict], Callable[[], List[dict]]]=None, query=None, is_multiselect=None
+    *,
+    sessions: Union[List[dict], Callable[[], List[dict]]] = None,
+    query=None,
+    is_multiselect=None,
 ):
     if callable(sessions):
         sessions = sessions()
-    component_value = _component_func(sessions=sessions, query=query, is_multiselect=is_multiselect)
+    component_value = _component_func(
+        sessions=sessions, query=query, is_multiselect=is_multiselect
+    )
     print(f'stogui.ototable: {component_value=}')
     return component_value
