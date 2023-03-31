@@ -1,8 +1,7 @@
 from distutils.util import strtobool
 import os
-from typing import Callable, Iterable
+from typing import Callable, Union, List
 import streamlit.components.v1 as components
-import streamlit as st
 
 DEBUG = strtobool(os.getenv('STOGUI_DEBUG', 'false'))
 
@@ -18,9 +17,10 @@ else:
 
 
 def oto_table(
-    *, sessions=None, query=None, is_multiselect=None
+    *, sessions: Union[List[dict], Callable[[], List[dict]]]=None, query=None, is_multiselect=None
 ):
     if callable(sessions):
         sessions = sessions()
     component_value = _component_func(sessions=sessions, query=query, is_multiselect=is_multiselect)
+    print(f'stogui.ototable: {component_value=}')
     return component_value
