@@ -31,8 +31,7 @@ def pipeline_maker(
     serialized_steps = [serializer(s) for s in steps]
 
     serialized_pipeline = _component_func(
-        items=serialized_items,
-        steps=serialized_steps
+        items=serialized_items, steps=serialized_steps
     )
     pipeline = (
         [
