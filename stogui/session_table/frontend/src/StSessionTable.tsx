@@ -1,8 +1,8 @@
 import React, { useEffect }  from 'react';
 import { Streamlit } from "streamlit-component-lib"
 import { useRenderData } from 'streamlit-component-lib-react-hooks'
-import { OtoTable } from '@otosense/ogui';
 import { Session } from '@otosense/ogui/lib/SessionTable/types';
+import { OtoTable } from './OtoTable';
 
 
 
