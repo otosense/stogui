@@ -27,18 +27,18 @@ def pipeline_maker(
     steps = steps or []
     serializer = serializer or identity
 
-    serializable_map = {i: serializer(i) for i in items}
+    serialized_items = [serializer(i) for i in items]
+    serialized_steps = [serializer(s) for s in steps]
 
-    _items = list(serializable_map.values())
-    _steps = [serializable_map[s] for s in steps]
-
-    serializable_pipeline = _component_func(items=_items, steps=_steps)
+    serialized_pipeline = _component_func(
+        items=serialized_items, steps=serialized_steps
+    )
     pipeline = (
         [
-            [k for k, v in serializable_map.items() if v == sp][0]
-            for sp in serializable_pipeline
+            next(iter(i for i in items if serializer(i) == s))
+            for s in serialized_pipeline
         ]
-        if serializable_pipeline
+        if serialized_pipeline
         else []
     )
     return pipeline
