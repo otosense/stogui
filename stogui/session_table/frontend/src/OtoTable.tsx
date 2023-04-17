@@ -225,6 +225,7 @@ export const OtoTable = (props: OtoTableProps): JSX.Element => {
       isMultiSelect={props.isMultiSelect}
       onSelectSessions={props.onSelectSessions}
       sessionKey={'ID'}
+      totalCount={props.data?.length ?? -1}
     />
   )
 }
