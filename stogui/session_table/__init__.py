@@ -16,7 +16,7 @@ else:
     _component_func = components.declare_component('session_table', path=build_dir)
 
 
-def oto_table(
+def session_table(
     *,
     sessions: Union[List[dict], Callable[[], List[dict]]] = None,
     query=None,
@@ -24,8 +24,9 @@ def oto_table(
 ):
     if callable(sessions):
         sessions = sessions()
-    component_value = _component_func(
+    selected_sessions = _component_func(
         sessions=sessions, query=query, is_multiselect=is_multiselect
     )
-    print(f'stogui.ototable: {component_value=}')
-    return component_value
+    if not selected_sessions:
+        return
+    return selected_sessions if is_multiselect else selected_sessions[0]

@@ -2,11 +2,11 @@ import React, { useEffect }  from 'react';
 import { Streamlit } from "streamlit-component-lib"
 import { useRenderData } from 'streamlit-component-lib-react-hooks'
 import { Session } from '@otosense/ogui/lib/SessionTable/types';
-import { OtoTable } from './OtoTable';
+import { SessionTable } from '@otosense/ogui/lib/SessionTable/SessionTable';
 
 
 
-const StOtoTable = () => {
+const StSessionTable = () => {
   const renderData = useRenderData()
   const sessions: Session[] = renderData.args['sessions'] || []
   const query = renderData.args['query'] || null
@@ -14,11 +14,11 @@ const StOtoTable = () => {
   useEffect(() => Streamlit.setFrameHeight(1024));
 
   return(
-    <OtoTable
+    <SessionTable
       data={sessions}
-      onSelectSessions={(v: string[]) => {
-        console.log('OtoTable onSelectSessions', v)
-        Streamlit.setComponentValue(v)
+      onSelectSessions={(sessions: any[]) => {
+        console.log('SessionTable onSelectSessions', sessions)
+        Streamlit.setComponentValue(sessions)
       }}
       query={query}
       isMultiSelect={isMultiSelect}
@@ -26,4 +26,4 @@ const StOtoTable = () => {
   )
 }
 
-export default StOtoTable;
+export default StSessionTable;
