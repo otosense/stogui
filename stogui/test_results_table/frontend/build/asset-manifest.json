@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "./static/js/main.9a33623c.chunk.js",
-    "main.js.map": "./static/js/main.9a33623c.chunk.js.map",
+    "main.js": "./static/js/main.ad6bea04.chunk.js",
+    "main.js.map": "./static/js/main.ad6bea04.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.44d30fc2.js",
     "runtime-main.js.map": "./static/js/runtime-main.44d30fc2.js.map",
     "static/js/2.6d15c91c.chunk.js": "./static/js/2.6d15c91c.chunk.js",
     "static/js/2.6d15c91c.chunk.js.map": "./static/js/2.6d15c91c.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.91a20b17e78199fc69d18c83d3df89a2.js": "./precache-manifest.91a20b17e78199fc69d18c83d3df89a2.js",
+    "precache-manifest.5d02d48087dbf73d69c390198230a4ff.js": "./precache-manifest.5d02d48087dbf73d69c390198230a4ff.js",
     "service-worker.js": "./service-worker.js",
     "static/js/2.6d15c91c.chunk.js.LICENSE.txt": "./static/js/2.6d15c91c.chunk.js.LICENSE.txt",
     "static/media/IBMPlexSans-Bold.ttf": "./static/media/IBMPlexSans-Bold.99c6de95.ttf",
@@ -19,6 +19,6 @@
   "entrypoints": [
     "static/js/runtime-main.44d30fc2.js",
     "static/js/2.6d15c91c.chunk.js",
-    "static/js/main.9a33623c.chunk.js"
+    "static/js/main.ad6bea04.chunk.js"
   ]
 }
