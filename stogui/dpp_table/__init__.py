@@ -24,6 +24,8 @@ def dpp_table(
 ):
     if callable(data):
         data = data()
-    selected_dpp = _component_func(data=data, query=query, is_multiselect=is_multiselect)
+    selected_dpp = _component_func(
+        data=data, query=query, is_multiselect=is_multiselect
+    )
     if selected_dpp:
         return selected_dpp if is_multiselect else selected_dpp[0]
