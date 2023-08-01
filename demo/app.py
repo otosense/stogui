@@ -68,4 +68,5 @@ def run_streamlit_app():
 
 
 if __name__ == '__main__':
+    # Run this app with: streamlit run ./stogui/demo/app.py
     main()
