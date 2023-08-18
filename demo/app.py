@@ -7,6 +7,7 @@ from front.elements import InputBase
 from streamlitfront.base import mk_app
 
 from stogui.drag_and_drop_flow import drag_and_drop_flow
+from stogui.hello_world import hello_world
 from stogui.pipeline_maker import pipeline_maker
 
 
@@ -25,6 +26,16 @@ def mk_pipeline(steps):
 
 
 @dataclass
+class HelloWorld(InputBase):
+    def render(self):
+        return hello_world()
+
+
+def hw(x):
+    return x
+
+
+@dataclass
 class PipelineMaker(InputBase):
     items: list = None
     steps: list = None
@@ -38,10 +49,11 @@ class PipelineMaker(InputBase):
 
 def main():
     app = mk_app(
-        [drag_and_drop_dag_maker, mk_pipeline],
+        [drag_and_drop_dag_maker, mk_pipeline, hw,],
         config={
             APP_KEY: {'title': 'STOGUI Demo'},
             RENDERING_KEY: {
+                'hw': {'execution': {'inputs': {'x': {ELEMENT_KEY: HelloWorld}}}},
                 'drag_and_drop_dag_maker': {
                     'execution': {'inputs': {'x': {ELEMENT_KEY: DnDFlow}}}
                 },
